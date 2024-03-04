@@ -1714,7 +1714,7 @@ pub mod fluent_builders {
         /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
         /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
         /// </ul>
-        pub fn attribute_names(mut self, input: crate::model::QueueAttributeName) -> Self {
+        pub fn attribute_names(mut self, input: crate::model::MessageSystemAttributeName) -> Self {
             self.inner = self.inner.attribute_names(input);
             self
         }
@@ -1737,7 +1737,7 @@ pub mod fluent_builders {
         /// </ul>
         pub fn set_attribute_names(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageSystemAttributeName>>,
         ) -> Self {
             self.inner = self.inner.set_attribute_names(input);
             self

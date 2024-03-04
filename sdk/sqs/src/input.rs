@@ -2326,7 +2326,7 @@ pub mod receive_message_input {
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
         pub(crate) attribute_names:
-            std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
+            std::option::Option<std::vec::Vec<crate::model::MessageSystemAttributeName>>,
         pub(crate) message_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) max_number_of_messages: std::option::Option<i32>,
         pub(crate) visibility_timeout: std::option::Option<i32>,
@@ -2367,7 +2367,7 @@ pub mod receive_message_input {
         /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
         /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
         /// </ul>
-        pub fn attribute_names(mut self, input: crate::model::QueueAttributeName) -> Self {
+        pub fn attribute_names(mut self, input: crate::model::MessageSystemAttributeName) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
             v.push(input);
             self.attribute_names = Some(v);
@@ -2392,7 +2392,7 @@ pub mod receive_message_input {
         /// </ul>
         pub fn set_attribute_names(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageSystemAttributeName>>,
         ) -> Self {
             self.attribute_names = input;
             self
@@ -4284,7 +4284,8 @@ pub struct ReceiveMessageInput {
     /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
-    pub attribute_names: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
+    pub attribute_names:
+        std::option::Option<std::vec::Vec<crate::model::MessageSystemAttributeName>>,
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
     /// <ul>
     /// <li> <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p> </li>
@@ -4344,7 +4345,9 @@ impl ReceiveMessageInput {
     /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
-    pub fn attribute_names(&self) -> std::option::Option<&[crate::model::QueueAttributeName]> {
+    pub fn attribute_names(
+        &self,
+    ) -> std::option::Option<&[crate::model::MessageSystemAttributeName]> {
         self.attribute_names.as_deref()
     }
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
